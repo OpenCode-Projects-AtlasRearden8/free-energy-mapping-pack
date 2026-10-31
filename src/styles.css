@@ -1,0 +1,197 @@
+/* Free Energy Mapping Printables — shared print stylesheet.
+   Plain, warm, unbranded. Prints cleanly to Letter-size PDF. */
+
+:root {
+  --ink: #2b2b2b;
+  --soft: #5f5f5f;
+  --line: #b9b9b9;
+  --line-soft: #d9d9d9;
+  --paper: #ffffff;
+  --tint-1: #f4f1ea; /* level 1 — nearly empty */
+  --tint-2: #f7ede3; /* level 2 — low */
+  --tint-3: #eef2e7; /* level 3 — middle */
+  --tint-4: #e7eff0; /* level 4 — decent */
+  --tint-5: #eef0e2; /* level 5 — good */
+}
+
+* { box-sizing: border-box; }
+
+@page {
+  size: Letter;
+  margin: 0.55in;
+}
+
+html, body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 11pt;
+  line-height: 1.45;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  page-break-after: always;
+  page-break-inside: avoid;
+}
+.page:last-child { page-break-after: auto; }
+
+/* ---------- Intro page ---------- */
+
+.intro-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 9.4in;
+  padding: 0.3in 0.2in;
+}
+
+.intro-kicker {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 0.15in;
+}
+
+.intro-title {
+  font-size: 25pt;
+  line-height: 1.2;
+  margin: 0 0 0.25in 0;
+  font-weight: normal;
+}
+
+.intro-body { font-size: 11.5pt; }
+.intro-body p { margin: 0 0 0.16in 0; }
+
+.how-list { margin: 0.2in 0; padding: 0; list-style: none; }
+.how-list li {
+  margin-bottom: 0.14in;
+  padding-left: 0.45in;
+  text-indent: -0.45in;
+}
+.how-num {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-right: 0.18in;
+}
+
+.intro-close {
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.14in;
+  font-size: 10pt;
+  color: var(--soft);
+}
+
+/* ---------- Content pages ---------- */
+
+.sheet-title {
+  font-size: 17pt;
+  margin: 0 0 0.05in 0;
+  font-weight: normal;
+}
+.sheet-sub {
+  font-size: 9.5pt;
+  color: var(--soft);
+  margin: 0 0 0.18in 0;
+}
+
+.note {
+  font-size: 9.5pt;
+  color: var(--soft);
+  font-style: italic;
+}
+
+.fill-line {
+  display: inline-block;
+  border-bottom: 1px solid var(--line);
+  min-width: 1.6in;
+}
+
+.hint { color: var(--soft); font-size: 8.5pt; font-style: italic; }
+
+table { border-collapse: collapse; width: 100%; }
+th, td {
+  border: 1px solid var(--line-soft);
+  padding: 5pt 6pt;
+  text-align: left;
+  vertical-align: top;
+  font-size: 9.5pt;
+}
+th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #f6f6f6;
+}
+
+.cell-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7.5pt;
+  color: var(--soft);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.write-cell { height: 0.42in; }
+
+.level-1-cell { background: var(--tint-1); }
+.level-2-cell { background: var(--tint-2); }
+.level-3-cell { background: var(--tint-3); }
+.level-4-cell { background: var(--tint-4); }
+.level-5-cell { background: var(--tint-5); }
+
+.energy-legend { margin: 0.12in 0 0.2in 0; }
+.energy-legend table { width: auto; }
+.energy-legend td { border: none; padding: 2pt 10pt 2pt 0; font-size: 8.5pt; color: var(--soft); }
+
+/* ---------- Menu / card pieces ---------- */
+
+.menu-block {
+  border: 1px solid var(--line-soft);
+  border-radius: 4pt;
+  padding: 8pt 10pt;
+  margin-bottom: 0.14in;
+  page-break-inside: avoid;
+}
+
+.menu-block h3 {
+  margin: 0 0 4pt 0;
+  font-size: 10.5pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-block ul { margin: 0; padding-left: 0.2in; }
+.menu-block li { margin: 2pt 0; font-size: 9.5pt; }
+
+.check {
+  display: inline-block;
+  width: 0.13in;
+  height: 0.13in;
+  border: 1px solid var(--line);
+  margin-right: 6pt;
+  vertical-align: baseline;
+}
+
+.card {
+  border: 1.5px solid var(--line);
+  border-radius: 6pt;
+  padding: 0.18in 0.22in;
+  page-break-inside: avoid;
+}
+
+.card h3 { margin: 0 0 6pt 0; font-size: 12pt; font-family: Arial, Helvetica, sans-serif; }
+
+.sorter-col { page-break-inside: avoid; }
+.sorter-col th { text-align: center; }
+
+.footer-note {
+  margin-top: 0.2in;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 6pt;
+  font-size: 8pt;
+  color: var(--soft);
+}
